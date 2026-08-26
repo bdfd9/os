@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v2.json
+version: 2
+
+base:
+  image:
+    registry: quay.io
+    repository: fedora/fedora-coreos
+    tag: 44
+
+metadata:
+  name: coreos-main
+  description: This is my personal OS image.
+
+spec:
+  platforms:
+    - linux/amd64
+  # - linux/arm64
+
+modules:
+  - from-file: common/common-modules.yml
+  - from-file: common/server-modules.yml
+  - from-file: common/selinux-modules.yml
+  - from-file: common/final-modules.yml

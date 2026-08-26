@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: script
+    scripts:
+      - http-mirrors.sh
+
+  - type: files
+    files:
+      - source: system/base/usr
+        destination: /usr
+      - source: system/base/etc
+        destination: /etc
+
+  - from-file: common/common-packages.yml
