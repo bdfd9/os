@@ -1,0 +1,32 @@
+# Disable alsa state daemon
+disable alsa-state.service
+
+# Disable avahi daemon
+disable avahi-daemon.service
+disable avahi-daemon.socket
+
+# Disable iSCSI daemons
+disable iscsid.service
+disable iscsid.socket
+disable iscsiuio.service
+disable iscsiuio.socket
+
+# Disable modem manager
+disable ModemManager.service
+
+# Disable print services
+disable cups-browsed.service
+disable cups.path
+disable cups.service
+disable cups.socket
+
+# Disable sshd
+disable sshd.service
+disable sshd.socket
+disable sshd-unix-local.socket
+disable sshd-keygen.target
+
+# Disable sssd
+disable sssd.service
+disable sssd-kcm.service
+disable sssd-kcm.socket
