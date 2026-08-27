@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/script-v2.json
+
+type: script
+scripts:
+  - desktop/disable-cups.sh
+  - desktop/disable-sshd.sh
+  - desktop/disable-sssd.sh

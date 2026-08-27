@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: files
+    files:
+      - source: system/desktop
+        destination: /
+  - from-file: common/desktop/packages.yml
+  - from-file: common/desktop/scripts.yml

@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-v1.json
+
+type: dnf
+install:
+  install-weak-deps: false
+  packages:
+    # Security / Authentication
+    - ksshaskpass
+
+    # KDE
+    - fedora-third-party
+    - fedora-workstation-repositories
+    - fuse-encfs
+    - kde-connect
+    - kde-connect-libs
+    - kdeconnectd
+    - kdenetwork-filesharing
+    - kdeplasma-addons
+    - kdialog
+    - krfb
+    - krfb-libs
+    - ksystemlog
+    - merkuro
+    - plasma-browser-integration
+    - plasma-discover
+    - plasma-discover-libs
+    - plasma-wallpapers-dynamic
+    - qt6-qtlocation

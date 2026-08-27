@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/script-v2.json
+
+type: script
+scripts:
+  - common/harden-login-defs.sh
+  - common/remove-flatpak-add-fedora-repos.sh

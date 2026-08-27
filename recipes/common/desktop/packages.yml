@@ -1,0 +1,106 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-v1.json
+
+type: dnf
+install:
+  install-weak-deps: false
+  packages:
+    # Audio / Firmware
+    - easyeffects
+    - pulseaudio-utils
+    - alsa-firmware
+    - alsa-sof-firmware
+    - intel-audio-firmware
+    - iwlwifi-dvm-firmware
+    - iwlwifi-mvm-firmware
+
+    # Cameras
+    - libcamera
+    - libcamera-gstreamer
+    - libcamera-ipa
+    - libcamera-tools
+    - libcamera-v4l2
+    - pipewire-plugin-libcamera
+
+    # Files / Filesystems / Network Shares
+    - gvfs-archive
+    - gvfs-mtp
+    - gvfs-nfs
+    - gvfs-smb
+    - jmtpfs
+
+    # Network / Connectivity
+    - NetworkManager-bluetooth
+
+    # Security / Authentication
+    - fprintd
+    - fprintd-pam
+
+    # Performance
+    - scx-manager
+    - scx-scheds
+    - scx-tools
+    - scxctl
+
+    # Dev tools
+    - glx-utils
+
+    # HID
+    - libratbag-ratbagd
+    - steam-devices
+
+    # Window Managers
+    - xdg-user-dirs
+    - xeyes
+
+    # Fonts
+    - default-fonts
+    - default-fonts-core-emoji
+    - fira-code-fonts
+    - google-noto-cjk-fonts
+    - google-noto-color-emoji-fonts
+    - google-noto-emoji-fonts
+    - google-noto-fonts-all
+    - google-noto-sans-cjk-fonts
+    - liberation-fonts
+    - rsms-inter-fonts
+
+    # Dev tools
+    - clang
+    - clang-tools-extra
+    - cmake
+    - gcc
+    - kate
+    - lldb
+    - make
+    - mold
+    - ninja
+    - tokei
+
+    # IME
+    - fcitx-qt5
+    - fcitx5-autostart
+    - fcitx5-configtool
+    - fcitx5-mozc
+    - fcitx5-qt
+    - imsettings
+    - kcm-fcitx5
+    - kcm-fcitx5
+
+    # Capture
+    - obs-studio
+    - scrcpy
+
+    # Games
+    - gamescope
+    - mangohud
+    - VK_hdr_layer
+
+    # Dictionaries
+    - mecab
+    - mecab-ipadic
+    - tesseract-langpack-jpn
+
+remove:
+  packages:
+    - firefox
+    - firefox-langpacks

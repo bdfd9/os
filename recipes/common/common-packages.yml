@@ -1,0 +1,126 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-v1.json
+
+type: dnf
+install:
+  install-weak-deps: false
+  packages:
+    - hardened_malloc
+
+    # WiFi/Bluetooth firmware
+    - atheros-firmware
+    - brcmfmac-firmware
+    - mt7xxx-firmware
+    - nxpwireless-firmware
+    - realtek-firmware
+    - tiwilink-firmware
+
+    # Containers
+    - distrobox
+    - podman-compose
+    - podman-machine
+    - podman-tui
+    - podmansh
+    - systemd-container
+
+    # Network / Connectivity
+    - NetworkManager
+    - NetworkManager-libnm
+    - NetworkManager-openvpn
+    - NetworkManager-strongswan
+    - NetworkManager-wifi
+    - iftop
+    - iproute
+    - wireguard-tools
+
+    # Network Security
+    - firewalld
+
+    # Security / Authentication
+    - clevis
+    - git-credential-libsecret
+    - pam_yubico
+    - yubikey-manager
+
+    # Shell
+    - bash-color-prompt
+    - tmux
+    - zsh
+
+    # System / Utilities
+    - ansible
+    - bpftool
+    - curl
+    - ddcutil # Query and change monitor settings
+    - evtest
+    - fastfetch
+    - fuse # eh
+    - fwupd
+    - htop
+    - inotify-tools
+    - lm_sensors
+    - lshw
+    - nvme-cli
+    - rclone
+    - restic
+    - rsync
+    - sbsigntools
+    - setools-console
+    - smartmontools
+    - stow
+    - strace
+    - symlinks
+    - tcpdump
+    - traceroute
+
+    # Dev tools
+    - git
+    - glx-utils
+    - jq
+    - just
+    - perf
+    - perl
+    - python3
+    - python3-pip
+    - ripgrep
+    - ShellCheck
+    - tio
+    - uv
+    - vim
+    - wireshark
+
+    # Power
+    - powerstat
+    - powertop
+
+    # SMB
+    - samba
+    - samba-ldb-ldap-modules
+
+    # Flatpak
+    - flatpak
+    - flatpak-spawn
+
+    # Extra
+    - tailscale
+
+    # Codecs / Video / Images
+    - AtomicParsley
+    - libheif
+    - libva-utils
+    - mozilla-openh264
+    - openh264
+    - perl-Image-ExifTool
+    - yt-dlp
+
+    # Virtualization
+    - libvirt
+    - qemu
+    - qemu-char-spice
+    - qemu-device-display-virtio-gpu
+    - qemu-device-display-virtio-vga
+    - qemu-device-usb-redirect
+    - qemu-img
+    - qemu-system-x86-core
+    - qemu-user-binfmt
+    - qemu-user-static
+    - virt-manager

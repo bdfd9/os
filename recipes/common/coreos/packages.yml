@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/modules/dnf-v1.json
+
+type: dnf
+install:
+  install-weak-deps: false
+  packages:
+    - cockpit-files
+    - cockpit-machines
+    - cockpit-networkmanager
+    - cockpit-podman
+    - cockpit-selinux
+    - cockpit-storaged
+    - cockpit-system
+    - cockpit-ostree
+
+remove:
+  auto-remove: true
+  packages:
+    - podman-docker
