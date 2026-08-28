@@ -47,10 +47,10 @@ jobs:
 
           fuse-overlayfs --version
 
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
+      # - name: Checkout
+      #   uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      #   with:
+      #     persist-credentials: false
 
       - name: Build Image
         uses: blue-build/github-action@v1.12
@@ -65,7 +65,7 @@ jobs:
           squash: true
           chunkah: true
           max_layers: 256
-          skip_checkout: true
+          # skip_checkout: true
           use_cache: false
           retry_push_count: 3
           verify_install: true
