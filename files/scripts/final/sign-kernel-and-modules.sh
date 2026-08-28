@@ -32,8 +32,9 @@ find "/lib/modules/${KERNEL_VERSION}" -type f -name '*.ko.*' -print0 | while IFS
 
     case "${module_suffix}" in
         .xz)
-            xz --decompress "${module}"
+            xz -d --keep "${module}"
             sign_module "${module_basename}"
+            rm -f "${module}"
             xz -z --check=crc32 --lzma2=dict=1MiB -f "${module_basename}"
             ;;
         .gz)
