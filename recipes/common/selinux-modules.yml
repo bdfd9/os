@@ -3,5 +3,5 @@
 modules:
   - type: script
     scripts:
-      - install-selinux-policies.sh
-      - set-selinux-booleans.sh
+      - selinux/install-selinux-policies.sh
+      - selinux/set-selinux-booleans.sh
