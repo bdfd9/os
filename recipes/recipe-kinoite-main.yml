@@ -1,20 +1,11 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v2.json
-version: 2
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: kinoite-main
+description: "This is my personal OS image."
+base-image: quay.io/fedora/fedora-kinoite
+image-version: 44
 
-base:
-  image:
-    registry: quay.io
-    repository: fedora/fedora-kinoite
-    tag: 44
-
-metadata:
-  name: kinoite-main
-  description: This is my personal OS image.
-
-spec:
-  platforms:
-    - linux/amd64
-  # - linux/arm64
+platforms:
+  - linux/amd64
 
 modules:
   - from-file: common/common-modules.yml
