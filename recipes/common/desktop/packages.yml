@@ -36,10 +36,10 @@ install:
     - fprintd-pam
 
     # Performance
-    - scx-manager
-    - scx-scheds
-    - scx-tools
-    - scxctl
+    # - scx-manager
+    # - scx-scheds
+    # - scx-tools
+    # - scxctl
 
     # Dev tools
     - glx-utils
