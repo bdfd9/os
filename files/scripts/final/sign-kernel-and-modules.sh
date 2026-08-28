@@ -13,6 +13,10 @@ PRIVATE_KEY_PATH="/tmp/certs/private_key.priv"
 
 openssl x509 -in "${PUBLIC_KEY_DER_PATH}" -out "${PUBLIC_KEY_CRT_PATH}"
 
+ls -lha /
+
+ls -lha /secureboot || true
+
 sbsign \
     --key "${PRIVATE_KEY_PATH}" \
     --cert "${PUBLIC_KEY_CRT_PATH}" \
