@@ -23,7 +23,7 @@ permissions: {}
 jobs:
   bluebuild:
     name: image
-    runs-on: ${{ matrix.architecture == 'x86_64' && 'ubuntu-26.04' || 'ubuntu-26.04-arm' }}
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       packages: write
