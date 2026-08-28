@@ -15,28 +15,50 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
 jobs:
-  bluebuild:
-    name: Build Custom Image
-    runs-on: ubuntu-latest
+  kinoite-main:
+    name: Build kinoite main
     permissions:
       contents: read
+      actions: read
+      packages: write
+      id-token: write
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      recipe: recipe-kinoite-main.yml
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
+      SECUREBOOT_PRIVATE_KEY: ${{ secrets.SECUREBOOT_PRIVATE_KEY }}
+
+  kinoite-nvidia:
+    name: Build kinoite nvidia
+    needs: kinoite-main
+    permissions:
+      contents: read
+      actions: read
       packages: write
       id-token: write
     strategy:
-      fail-fast: false # stop GH from cancelling all matrix builds if one fails
+      fail-fast: false
       matrix:
         recipe:
-          # !! Add your recipes here
-          - recipe.yml
-    steps:
-      # the build is fully handled by the reusable github action
-      - name: Build Custom Image
-        uses: blue-build/github-action@v1.11
-        with:
-          recipe: ${{ matrix.recipe }}
-          cosign_private_key: ${{ secrets.SIGNING_SECRET }}
-          registry_token: ${{ github.token }}
-          pr_event_number: ${{ github.event.number }}
+          - recipe-kinoite-nvidia-open.yml
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      recipe: ${{ matrix.recipe }}
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
+      SECUREBOOT_PRIVATE_KEY: ${{ secrets.SECUREBOOT_PRIVATE_KEY }}
 
-          # enabled by default, disable if your image is small and you want faster builds
-          maximize_build_space: true
+  coreos-main:
+    name: Build kinoite main
+    permissions:
+      contents: read
+      actions: read
+      packages: write
+      id-token: write
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      recipe: recipe-coreos-main.yml
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
+      SECUREBOOT_PRIVATE_KEY: ${{ secrets.SECUREBOOT_PRIVATE_KEY }}
