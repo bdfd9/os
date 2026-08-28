@@ -37,14 +37,9 @@ jobs:
       actions: read
       packages: write
       id-token: write
-    strategy:
-      fail-fast: false
-      matrix:
-        recipe:
-          - recipe-kinoite-nvidia-open.yml
     uses: ./.github/workflows/reusable-build.yml
     with:
-      recipe: ${{ matrix.recipe }}
+      recipe: recipe-kinoite-nvidia-open.yml
     secrets:
       SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
       SECUREBOOT_PRIVATE_KEY: ${{ secrets.SECUREBOOT_PRIVATE_KEY }}
