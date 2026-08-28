@@ -6,3 +6,7 @@ modules:
       - source: system/kinoite
         destination: /
   - from-file: common/kinoite/packages.yml
+  - type: script
+    scripts:
+      - remove-krunner-appstream.sh
+      - systemsettings-standard-malloc.sh

@@ -2,5 +2,14 @@
 
 type: script
 scripts:
+  - common/container-pubkey-symlinks.sh
+  - common/disable-homed.sh
+  - common/disable-nfs.sh
+  - common/enable-authselect-faillock.sh
   - common/harden-login-defs.sh
+  - common/hardened-malloc-pam.sh
   - common/remove-flatpak-add-fedora-repos.sh
+  - common/set-ld-preload.sh
+  # - common/disable-resolved.sh
+  # - common/setup-dnsconfd.sh
+  # - disable-sshd-vsock.sh # todo only in desktop

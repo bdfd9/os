@@ -2,6 +2,13 @@
 
 type: script
 scripts:
+  - desktop/disable-alsa-state.sh
+  - desktop/disable-avahi.sh
   - desktop/disable-cups.sh
+  - desktop/disable-iscsi.sh
+  - desktop/disable-modem-manager.sh
   - desktop/disable-sshd.sh
   - desktop/disable-sssd.sh
+
+  # - trivalent/install.sh
+  # - trivalent/install-subresource-filter.sh

@@ -2,5 +2,16 @@
 
 modules:
   - type: script
+    secrets:
+      - type: env
+        name: SECUREBOOT_PRIVATE_KEY
+        mount:
+          type: file
+          destination: /tmp/certs/private_key.priv
     scripts:
-      - regenerate-initramfs.sh
+      - final/regenerate-initramfs.sh
+      - final/sign-kernel-and-modules.sh
+      - final/remove-sudo.sh
+      - final/remove-suid.sh
+      - final/remove-unused-repos.sh
+      - final/enable-preset-services.sh

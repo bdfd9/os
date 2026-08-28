@@ -12,6 +12,9 @@ install:
     - cockpit-storaged
     - cockpit-system
     - cockpit-ostree
+    - firewalld
+    - udisks2
+    - usbguard
 
 remove:
   auto-remove: true

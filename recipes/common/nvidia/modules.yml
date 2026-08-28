@@ -3,8 +3,14 @@
 modules:
   - type: files
     files:
-      - source: system/zfs
+      - source: system/nvidia
         destination: /
+
   - type: script
     scripts:
-      - zfs/install.sh
+      - nvidia/install-kmod.sh
+
+  - type: script
+    scripts:
+      - nvidia/install-packages.sh
+      - nvidia/remove-nvidia-repos.sh
