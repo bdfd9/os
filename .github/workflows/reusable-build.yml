@@ -34,19 +34,6 @@ jobs:
       IMAGE_DIGEST: ${{ steps.image_manifest_metadata.outputs.IMAGE_DIGEST }}
 
     steps:
-      # Current version of fuse-overlayfs on ubuntu 26.04 causes issues with:
-      # libsemanage.semanage_commit_sandbox: Error while renaming /etc/selinux/targeted/tmp to /etc/selinux/targeted/active. (Directory not empty).
-      # This was fixed in 1.15 - https://github.com/containers/fuse-overlayfs/issues/444
-      - name: Install fresh fuse-overlayfs
-        run: |
-          set -eoux pipefail
-
-          curl -o fuse-overlayfs -L https://github.com/containers/fuse-overlayfs/releases/download/v1.17/fuse-overlayfs-x86_64
-          install -D -m 0755 fuse-overlayfs /usr/local/bin/fuse-overlayfs
-          rm fuse-overlayfs
-
-          fuse-overlayfs --version
-
       # - name: Checkout
       #   uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       #   with:
