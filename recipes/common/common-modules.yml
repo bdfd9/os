@@ -8,10 +8,8 @@ modules:
 
   - type: files
     files:
-      - source: system/base/usr
-        destination: /usr
-      - source: system/base/etc
-        destination: /etc
+      - source: system/base
+        destination: /
 
   - from-file: common/common-packages.yml
   - from-file: common/common-scripts.yml
