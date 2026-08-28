@@ -4,10 +4,6 @@ set -euo pipefail
 
 echo "::group:: ===$(basename "$0")==="
 
-ls -lha /
-
-ls -lha /secureboot || true
-
 KERNEL_VERSION="$(rpm -q 'kernel' --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
 KERNEL_IMAGE="/usr/lib/modules/${KERNEL_VERSION}/vmlinuz"
 
@@ -30,7 +26,7 @@ sign_module() {
         sha512 "${PRIVATE_KEY_PATH}" "${PUBLIC_KEY_CRT_PATH}" "${module_path}"
 }
 
-find "/lib/modules/$KVER" -type f -name '*.ko.*' -print0 | while IFS= read -r -d '' module; do
+find "/lib/modules/${KERNEL_VERSION}" -type f -name '*.ko.*' -print0 | while IFS= read -r -d '' module; do
     module_basename="${module%.*}"
     module_suffix=".${module##*.}"
 
