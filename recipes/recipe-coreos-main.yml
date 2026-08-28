@@ -2,7 +2,7 @@
 name: coreos-main
 description: "This is my personal OS image."
 base-image: quay.io/fedora/fedora-coreos
-image-version: 44
+image-version: stable
 
 platforms:
   - linux/amd64
