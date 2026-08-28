@@ -4,7 +4,7 @@ type: dnf
 install:
   install-weak-deps: false
   packages:
-    - hardened_malloc
+    # - hardened_malloc
 
     # WiFi/Bluetooth firmware
     - atheros-firmware
