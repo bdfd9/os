@@ -7,12 +7,15 @@ echo "::group:: ===$(basename "$0")==="
 KERNEL_VERSION="$(rpm -q 'kernel' --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
 KERNEL_IMAGE="/usr/lib/modules/${KERNEL_VERSION}/vmlinuz"
 
-PUBLIC_KEY_PATH=
-PRIVATE_KEY_PATH=
+PUBLIC_KEY_DER_PATH="../../system/base/secureboot/MOK.der"
+PUBLIC_KEY_CRT_PATH="/tmp/secureboot-mok.crt"
+PRIVATE_KEY_PATH="${SECUREBOOT_PRIVATE_KEY}"
+
+openssl x509 -in "${PUBLIC_KEY_DER_PATH}" -out "${PUBLIC_KEY_CRT_PATH}"
 
 sbsign \
     --key "${PRIVATE_KEY_PATH}" \
-    --cert "${PUBLIC_KEY_PATH}" \
+    --cert "${PUBLIC_KEY_CRT_PATH}" \
     --output "${KERNEL_IMAGE}" \
     "${KERNEL_IMAGE}"
 
@@ -20,7 +23,7 @@ sign_module() {
     local module_path="$1"
 
     /usr/src/kernels/"${KERNEL_VERSION}"/scripts/sign-file \
-        sha512 "${PRIVATE_KEY_PATH}" "${PUBLIC_KEY_PATH}" "${module_path}"
+        sha512 "${PRIVATE_KEY_PATH}" "${PUBLIC_KEY_CRT_PATH}" "${module_path}"
 }
 
 find "/lib/modules/$KVER" -type f -name '*.ko.*' -print0 | while IFS= read -r -d '' module; do
