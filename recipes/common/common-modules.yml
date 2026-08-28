@@ -5,6 +5,7 @@ modules:
     scripts:
       - http-mirrors.sh
       # - install-pinned-kernel
+      - common/kernel-packages.sh
 
   - type: files
     files:
