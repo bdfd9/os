@@ -7,7 +7,7 @@ echo "::group:: ===$(basename "$0")==="
 KERNEL_VERSION="$(rpm -q 'kernel' --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
 KERNEL_IMAGE="/usr/lib/modules/${KERNEL_VERSION}/vmlinuz"
 
-PUBLIC_KEY_DER_PATH="../../system/base/secureboot/MOK.der"
+PUBLIC_KEY_DER_PATH="/secureboot/MOK.der"
 PUBLIC_KEY_CRT_PATH="/tmp/secureboot-mok.crt"
 PRIVATE_KEY_PATH="/tmp/certs/private_key.priv"
 
