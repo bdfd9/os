@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-dnf -y --enable-repo="rpmfusion-nonfree" install libva-intel-driver
+dnf -y --enable-repo="rpmfusion-nonfree" install intel-media-driver
