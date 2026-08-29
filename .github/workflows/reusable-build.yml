@@ -40,6 +40,7 @@ jobs:
       #     persist-credentials: false
       - name: Setup
         run: |
+          sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
           sudo systemctl enable --now docker.socket
 
       - name: List installed packages
