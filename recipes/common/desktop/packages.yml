@@ -35,6 +35,13 @@ install:
     - fprintd
     - fprintd-pam
 
+    # System
+    - plymouth
+    - plymouth-system-theme
+
+    # Hw
+    - intel-compute-runtime
+
     # Performance
     # - scx-manager
     # - scx-scheds

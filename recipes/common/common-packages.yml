@@ -71,6 +71,7 @@ install:
     - symlinks
     - tcpdump
     - traceroute
+    - zstd
 
     # Dev tools
     - git
