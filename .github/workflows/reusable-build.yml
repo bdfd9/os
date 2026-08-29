@@ -53,13 +53,13 @@ jobs:
           sudo rm -rf ${verbose} /usr/local/.ghcup
           sudo rm -rf ${verbose} /usr/local/.ghcu
 
+          sudo apt-get remove -y '^temurin-.*' > /dev/null
           sudo apt-get remove -y '^ant-.*' > /dev/null
-          sudo apt-get remove -y '^java-.*' > /dev/null
+          # sudo apt-get remove -y '^java-.*' > /dev/null
           sudo apt-get remove -y '^fonts-.*' > /dev/null
           sudo apt-get remove -y '^apache-.*' > /dev/null
           sudo apt-get remove -y '^postgresql-.*' > /dev/null
           sudo apt-get remove -y '^ruby.*' > /dev/null
-          sudo apt-get remove -y '^temurin-.*' > /dev/null
 
 
           sudo apt-get remove -y '^aspnetcore-.*' > /dev/null
