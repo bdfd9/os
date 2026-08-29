@@ -11,6 +11,8 @@ NVIDIA_REPO="fedora-nvidia"
 
 KERNEL_VERSION="$(rpm -q 'kernel' --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
 
+export LD=ld.bfd
+
 dnf install -y --setopt=install_weak_deps=False "kernel-devel-matched-${KERNEL_VERSION}"
 
 dnf install -y --setopt=install_weak_deps=False akmods gcc-c++
