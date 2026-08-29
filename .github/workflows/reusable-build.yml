@@ -56,8 +56,8 @@ jobs:
           # sudo apt-get remove -y '^temurin-.*' --fix-missing > /dev/null
           sudo apt-get remove -y '^ant-.*' --fix-missing  > /dev/null
           # sudo apt-get remove -y '^java-.*' > /dev/null
-          sudo apt-get remove -y '^fonts-.*' > /dev/null
-          sudo apt-get remove -y '^apache-.*' > /dev/null
+          sudo apt-get remove -y '^fonts-.*' --fix-missing  > /dev/null
+          sudo apt-get remove -y '^apache-.*' --fix-missing  > /dev/null
           sudo apt-get remove -y '^postgresql-.*' > /dev/null
           sudo apt-get remove -y '^ruby.*' > /dev/null
 
