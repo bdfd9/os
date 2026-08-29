@@ -8,22 +8,16 @@ selinux_policy_version="$(rpm -q --qf '%{version}-%{release}' selinux-policy)"
 dnf install -y --setopt=install_weak_deps=False --enable-repo=updates-archive \
     "selinux-policy-devel-${selinux_policy_version}"
 
-policy_modules=(flatpakfull nautilus systemsettings thunar)
+policy_modules=(flatpakfull systemsettings)
 
 cil_policy_modules=(
     './selinux/flatpakfull/grant_systemd_flatpak_exec.cil'
-    './selinux/ptrace/container-ptrace.cil'
     './selinux/sockets/secureblue_audit_sockets.cil'
     './selinux/sockets/secureblue_deny_alg_sockets.cil'
     './selinux/sockets/secureblue_deny_ipsec_sockets.cil'
     './selinux/sockets/secureblue_deny_obscure_sockets.cil'
     './selinux/sockets/secureblue_deny_packet_radio_sockets.cil'
     './selinux/sockets/secureblue_socket_utils.cil'
-    './selinux/user_namespace/grant_fm_userns.cil'
-    './selinux/user_namespace/grant_userns.cil'
-    './selinux/user_namespace/harden_container_userns.cil'
-    './selinux/user_namespace/harden_userns.cil'
-    './selinux/user_namespace/userns_deny_unconfined_relabels.cil'
 )
 
 for module in "${policy_modules[@]}"; do
