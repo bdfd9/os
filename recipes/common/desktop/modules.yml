@@ -7,12 +7,3 @@ modules:
         destination: /
   - from-file: common/desktop/packages.yml
   - from-file: common/desktop/scripts.yml
-
-  - type: dnf
-    repos:
-      nonfree: rpmfusion
-      cleanup: true
-    install:
-      packages:
-        - intel-media-driver
-      install-weak-deps: true
