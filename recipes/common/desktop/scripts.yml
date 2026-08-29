@@ -9,7 +9,6 @@ scripts:
   - desktop/disable-modem-manager.sh
   - desktop/disable-sshd.sh
   - desktop/disable-sssd.sh
-  - desktop/install-intel-packages.sh
 
   # - trivalent/install.sh
   # - trivalent/install-subresource-filter.sh
