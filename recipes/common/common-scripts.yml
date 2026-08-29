@@ -7,7 +7,7 @@ scripts:
   - common/disable-nfs.sh
   - common/enable-authselect-faillock.sh
   - common/harden-login-defs.sh
-  - common/hardened-malloc-pam.sh
+  # - common/hardened-malloc-pam.sh
   - common/remove-flatpak-add-fedora-repos.sh
   - common/set-ld-preload.sh
   # - common/disable-resolved.sh
