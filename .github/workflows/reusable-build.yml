@@ -38,10 +38,10 @@ jobs:
       #   uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       #   with:
       #     persist-credentials: false
-      - name: Setup
-        run: |
-          sudo apt install docker-ce
-          sudo systemctl enable --now docker.socket
+      # - name: Setup
+      #   run: |
+      #     sudo apt install docker-ce
+      #     sudo systemctl enable --now docker.socket
 
       - name: List installed packages
         run: |
@@ -51,7 +51,7 @@ jobs:
         run: |
           set -x
 
-          sudo docker image prune --all --force > /dev/null
+          # sudo docker image prune --all --force > /dev/null
           sudo rm -rf ${verbose} /usr/share/dotnet
           sudo rm -rf ${verbose} /usr/local/lib/android
           sudo rm -rf ${verbose} /opt/ghc
