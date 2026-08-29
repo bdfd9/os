@@ -2,6 +2,7 @@
 
 type: script
 scripts:
+  - common/remove-unused-repos.sh
   - common/container-pubkey-symlinks.sh
   - common/disable-homed.sh
   - common/disable-nfs.sh

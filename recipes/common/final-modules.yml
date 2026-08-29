@@ -13,5 +13,4 @@ modules:
       - final/sign-kernel-and-modules.sh
       - final/remove-sudo.sh
       - final/remove-suid.sh
-      - final/remove-unused-repos.sh
       - final/enable-preset-services.sh
