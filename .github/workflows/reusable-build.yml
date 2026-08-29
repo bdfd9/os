@@ -23,7 +23,7 @@ permissions: {}
 jobs:
   bluebuild:
     name: image
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
       packages: write
@@ -38,11 +38,6 @@ jobs:
       #   uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       #   with:
       #     persist-credentials: false
-      # - name: Setup
-      #   run: |
-      #     sudo apt install docker-ce
-      #     sudo systemctl enable --now docker.socket
-
       - name: List installed packages
         run: |
           apt list --installed
@@ -51,25 +46,34 @@ jobs:
         run: |
           set -x
 
-          # sudo docker image prune --all --force > /dev/null
+          sudo docker image prune --all --force > /dev/null
           sudo rm -rf ${verbose} /usr/share/dotnet
           sudo rm -rf ${verbose} /usr/local/lib/android
           sudo rm -rf ${verbose} /opt/ghc
           sudo rm -rf ${verbose} /usr/local/.ghcup
           sudo rm -rf ${verbose} /usr/local/.ghcu
 
-          # sudo apt-get remove -y '^aspnetcore-.*' > /dev/null
-          # sudo apt-get remove -y '^dotnet-.*' > /dev/null
-          # sudo apt-get remove -y '^llvm-.*' > /dev/null
-          # sudo apt-get remove -y '^clang-.*' > /dev/null
-          # sudo apt-get remove -y 'php.*' > /dev/null
-          # sudo apt-get remove -y '^mongodb-.*' > /dev/null
-          # sudo apt-get remove -y '^mysql-.*' > /dev/null
+          sudo apt-get remove -y '^ant-.*' > /dev/null
+          sudo apt-get remove -y '^java-.*' > /dev/null
+          sudo apt-get remove -y '^fonts-.*' > /dev/null
+          sudo apt-get remove -y '^apache-.*' > /dev/null
+          sudo apt-get remove -y '^postgresql-.*' > /dev/null
+          sudo apt-get remove -y '^ruby.*' > /dev/null
+          sudo apt-get remove -y '^temurin-.*' > /dev/null
+
+
+          sudo apt-get remove -y '^aspnetcore-.*' > /dev/null
+          sudo apt-get remove -y '^dotnet-.*' > /dev/null
+          sudo apt-get remove -y '^llvm-.*' > /dev/null
+          sudo apt-get remove -y '^clang-.*' > /dev/null
+          sudo apt-get remove -y 'php.*' > /dev/null
+          sudo apt-get remove -y '^mongodb-.*' > /dev/null
+          sudo apt-get remove -y '^mysql-.*' > /dev/null
           if [[ "$(uname -m)" == "x86_64" ]]; then
-            # sudo apt-get remove -y google-chrome-stable microsoft-edge-stable > /dev/null
+            sudo apt-get remove -y google-chrome-stable microsoft-edge-stable > /dev/null
             sudo apt-get remove -y google-cloud-cli --fix-missing > /dev/null
           fi
-          sudo apt-get remove -y azure-cli libgl1-mesa-dri --fix-missing > /dev/null
+          sudo apt-get remove -y azure-cli firefox mono-devel libgl1-mesa-dri --fix-missing > /dev/null
           sudo apt-get autoremove -y > /dev/null
           sudo apt-get clean > /dev/null
 
