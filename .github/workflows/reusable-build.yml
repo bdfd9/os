@@ -53,7 +53,7 @@ jobs:
           sudo rm -rf ${verbose} /usr/local/.ghcup
           sudo rm -rf ${verbose} /usr/local/.ghcu
 
-          sudo apt-get remove -y '^temurin-.*' > /dev/null
+          sudo apt-get remove -y '^temurin-.*' --fix-missing > /dev/null
           sudo apt-get remove -y '^ant-.*' > /dev/null
           # sudo apt-get remove -y '^java-.*' > /dev/null
           sudo apt-get remove -y '^fonts-.*' > /dev/null
