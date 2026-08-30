@@ -14,6 +14,9 @@ if [[ "${is_desktop}" == "true" ]]; then
     nvidia_packages_list+=(
         'libnvidia-fbc'
         'nvidia-driver'
+        'nvidia-driver-common'
+        'nvidia-driver-cuda-libs'
+        'nvidia-driver-libs'
         'nvidia-modprobe'
         'nvidia-persistenced'
         'nvidia-settings'
