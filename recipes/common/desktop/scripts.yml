@@ -11,6 +11,7 @@ scripts:
   - desktop/disable-sssd.sh
   - desktop/install-intel-packages.sh
   - desktop/disable-firmware-background.sh
+  - mchose-battery/install.sh
 
   # - trivalent/install.sh
   # - trivalent/install-subresource-filter.sh
