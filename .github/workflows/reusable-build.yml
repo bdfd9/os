@@ -78,7 +78,7 @@ jobs:
           sudo apt-get clean > /dev/null
 
       - name: Build Image
-        uses: blue-build/github-action@v1.12
+        uses: blue-build/github-action@v1.13
         env:
           SECUREBOOT_PRIVATE_KEY: ${{ secrets.SECUREBOOT_PRIVATE_KEY }}
         with:
