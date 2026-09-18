@@ -12,5 +12,5 @@ modules:
   - from-file: common/coreos/modules.yml
   - from-file: common/selinux-modules.yml
   - from-file: common/zfs-modules.yml
-  - from-file: common/45drives-modules.yml
+  # - from-file: common/45drives-modules.yml
   - from-file: common/final-modules.yml
