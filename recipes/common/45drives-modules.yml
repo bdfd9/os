@@ -4,3 +4,4 @@ modules:
   - type: script
     scripts:
       - 45-drives/install-python3-libzfs.sh
+      - 45-drives/install-cockpit-zfs.sh
