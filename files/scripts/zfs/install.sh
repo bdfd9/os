@@ -94,7 +94,6 @@ esac
     || { cat config.log; exit 1; }
 
 rm ./*src.rpm
-rm ./*devel*.rpm
 rm ./*debug*.rpm
 rm ./zfs-test*.rpm
 
