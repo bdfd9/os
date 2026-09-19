@@ -8,7 +8,7 @@ tmp_dir=$(mktemp -d)
 
 function cleanup() {
     rm -rf "${tmp_dir}"
-    dnf remove -y moreutils yarn
+    dnf remove -y moreutils yarn nodejs* yarnpkg
     exit
 }
 

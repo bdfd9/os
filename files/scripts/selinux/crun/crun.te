@@ -1,0 +1,9 @@
+module my-crun 1.0;
+
+require {
+        type container_runtime_t;
+        class process2 nnp_transition;
+}
+
+#============= container_runtime_t ==============
+allow container_runtime_t self:process2 nnp_transition;
