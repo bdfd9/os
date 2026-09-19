@@ -22,6 +22,6 @@ tar -z -x --no-same-owner --no-same-permissions -f "v2.4.1-4-fork.tar.gz"
 
 cd python3-libzfs-2.4.1-4-fork
 
-./configure --prefix=/usr && make install
+./configure --prefix=/usr && PREFIX=/usr make install
 
 cd -
