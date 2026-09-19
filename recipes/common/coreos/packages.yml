@@ -2,16 +2,16 @@
 
 type: dnf
 install:
-  install-weak-deps: false
   packages:
     - cockpit-files
     - cockpit-machines
     - cockpit-networkmanager
+    - cockpit-ostree
     - cockpit-podman
     - cockpit-selinux
     - cockpit-storaged
     - cockpit-system
-    - cockpit-ostree
+    - cockpit-ws
     - firewalld
     - udisks2
     - usbguard
@@ -21,4 +21,7 @@ install:
 remove:
   auto-remove: true
   packages:
+    - docker-cli
+    - moby-engine
+    - moby-filesystem
     - podman-docker

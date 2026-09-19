@@ -2,7 +2,7 @@
 
 set -euox pipefail
 
-dnf install -y --setopt=install_weak_deps=False moreutils yarn
+dnf install -y --setopt=install_weak_deps=False moreutils yarnpkg
 
 tmp_dir=$(mktemp -d)
 
