@@ -10,6 +10,6 @@ tar -z -x --no-same-owner --no-same-permissions -f "v2.4.1-4.tar.gz"
 
 cd python3-libzfs-2.4.1-4
 
-./configure && make install --prefix=/usr
+./configure --prefix=/usr && make install
 
 dnf remove -y python3-cython

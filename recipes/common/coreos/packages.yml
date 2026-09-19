@@ -12,10 +12,12 @@ install:
     - cockpit-storaged
     - cockpit-system
     - firewalld
-    - udisks2
-    - usbguard
+    - lsscsi
     - pcp
     - pcp-system-tools
+    - procinfo
+    - udisks2
+    - usbguard
 
 remove:
   auto-remove: true
