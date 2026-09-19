@@ -16,6 +16,7 @@ install:
     - udisks2
     - usbguard
     - pcp
+    - pcp-system-tools
 
 remove:
   auto-remove: true
