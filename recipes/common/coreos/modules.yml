@@ -6,3 +6,4 @@ modules:
       - source: system/coreos
         destination: /
   - from-file: common/coreos/packages.yml
+  - from-file: common/coreos/scripts.yml
