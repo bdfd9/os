@@ -3,4 +3,3 @@
 type: script
 scripts:
   - coreos/disable-coreos-migration-motd.sh
-  - coreos/install-sanoid.sh
