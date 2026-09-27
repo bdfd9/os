@@ -57,6 +57,7 @@ install:
     - fwupd
     - htop
     - inotify-tools
+    - iotop-c
     - lm_sensors
     - lshw
     - nvme-cli
