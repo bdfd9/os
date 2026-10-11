@@ -42,6 +42,7 @@ install:
     # Hw
     - intel-compute-runtime
     - intel-npu-driver
+    - intel-npu-smi
 
     # Performance
     # - scx-manager
