@@ -1,4 +1,5 @@
 kargs = [
+  "amdgpu.iommu_perfopt=0",
   "hash_pointers=always",
   "init_on_alloc=1",
   "init_on_free=1",
@@ -6,6 +7,8 @@ kargs = [
   "iommu.passthrough=0",
   "iommu.strict=1",
   "iommu=force",
+  "kvm-amd.nested=0",
+  "kvm-intel.nested=0",
   "kvm-intel.vmentry_l1d_flush=always",
   "kvm.mitigate_smt_rsb=1",
   "kvm_amd.sev=1",
