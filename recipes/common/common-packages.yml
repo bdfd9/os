@@ -30,6 +30,7 @@ install:
     - NetworkManager-wifi
     - iftop
     - iproute
+    - libcap-ng-python3
     - wireguard-tools
 
     # Network Security

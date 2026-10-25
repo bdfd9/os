@@ -14,3 +14,4 @@ modules:
       - final/remove-sudo.sh
       - final/remove-suid.sh
       - final/enable-preset-services.sh
+      - final/remove-pdf-thumbnailers.sh
