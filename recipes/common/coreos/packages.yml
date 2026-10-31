@@ -16,6 +16,7 @@ install:
     - pcp
     - pcp-system-tools
     - procinfo
+    - sanoid
     - udisks2
     - usbguard
 
