@@ -19,6 +19,7 @@ install:
     - sanoid
     - udisks2
     - usbguard
+    - mesa-va-drivers
 
 remove:
   auto-remove: true
