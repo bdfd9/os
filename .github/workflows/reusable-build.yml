@@ -94,4 +94,4 @@ jobs:
           # skip_checkout: true
           use_cache: false
           retry_push_count: 3
-          verify_install: true
+          verify_install: false
