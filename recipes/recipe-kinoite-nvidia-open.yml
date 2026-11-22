@@ -3,7 +3,7 @@
 name: kinoite-nvidia-open
 description: "This is my personal OS image."
 base-image: ghcr.io/bdfd9/kinoite-main
-image-version: 45
+image-version: 44
 
 platforms:
   - linux/amd64

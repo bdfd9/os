@@ -2,7 +2,7 @@
 name: kinoite-main
 description: "This is my personal OS image."
 base-image: quay.io/fedora/fedora-kinoite
-image-version: 45
+image-version: 44
 
 platforms:
   - linux/amd64
